@@ -2,37 +2,46 @@ import random
 
 options = ["rock", "paper", "scissors"]
 
-get_user_choice = input("Choose rock, paper or scissors: ")
+user_choice = input("Choose rock, paper or scissors: ")
 
-get_computer_choice = random.choice(options)
+computer_choice = random.choice(options)
 
-print(f"Computer chose {get_computer_choice}.")
+def get_user_choice():
+    return user_choice
+
+def get_computer_choice():
+    return computer_choice
 
 
 def get_winner():
 
-    if get_computer_choice == "rock":
-        if get_user_choice == "scissors":
-            print ("Computer wins!")
-        elif get_user_choice == "paper":
-            print("You win!")
+    if computer_choice == "rock":
+        if user_choice == "scissors":
+            print ("Computer chose rock. Computer wins!")
+        elif user_choice == "paper":
+            print("Computer chose rock. You win!")
         else:
-            print("It's a draw.")
+            print("Computer chose rock. It's a draw.")
 
-    elif get_computer_choice == "paper":
-        if get_user_choice == "scissors":
-            print ("You win!")
-        elif get_user_choice == "rock":
-            print("Computer wins!")
+    elif computer_choice == "paper":
+        if user_choice == "scissors":
+            print ("Computer chose paper. You win!")
+        elif user_choice == "rock":
+            print("Computer chose paper. Computer wins!")
         else:
-            print("It's a draw.")
+            print("Computer chose paper. It's a draw.")
 
-    elif get_computer_choice == "scissors":
-        if get_user_choice == "rock":
-            print ("You win!")
-        elif get_user_choice == "paper":
-            print("Computer wins!")
+    elif computer_choice == "scissors":
+        if user_choice == "rock":
+            print ("Computer chose scissors. You win!")
+        elif user_choice == "paper":
+            print("Computer chose scissors. Computer wins!")
         else:
-            print("It's a draw.")
+            print("Computer chose scissors. It's a draw.")
 
-get_winner()
+def game():
+    get_user_choice()
+    get_computer_choice()
+    get_winner()
+
+game()

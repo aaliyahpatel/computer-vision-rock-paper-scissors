@@ -12,7 +12,7 @@ while True:
     normalized_image = (image_np.astype(np.float32) / 127.0) - 1 # Normalize the image
     data[0] = normalized_image
     prediction = model.predict(data)
-    max_index = np.argmax (prediction)
+    max_index = prediction.argmax(axis = -1)
     print(max_index)
     if max_index == 0:
         print("Rock")

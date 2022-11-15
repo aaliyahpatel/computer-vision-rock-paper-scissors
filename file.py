@@ -14,6 +14,14 @@ while True:
     prediction = model.predict(data)
     max_index = np.argmax (prediction)
     print(max_index)
+    if max_index == 0:
+        print("Rock")
+    elif max_index == 1:
+        print("Paper")
+    elif max_index == 2:
+        print ("Scissors")
+    else:
+        print("Nothing")
     cv2.imshow('frame', frame)
     # Press q to close the window
     print(prediction)
